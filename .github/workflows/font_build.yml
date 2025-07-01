@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Install dependencies
       run: sudo apt -y update && sudo apt -y install fonttools fontforge python3-fontforge
@@ -21,7 +21,7 @@ jobs:
       run: echo "date=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
 
     - name: Archive artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: twemojicolr_win98sefork-${{steps.scdntaev.outputs.date}}
         path: ${{github.workspace}}/build/Twemoji Mozilla.ttf
